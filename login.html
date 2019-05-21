@@ -7,7 +7,7 @@
   <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script type="text/javascript">
   // Get the current user:
-    const user = window.netlifyIdentity.currentUser();
+    // const user = window.netlifyIdentity.currentUser();
     
 
     // console.log('user',user);
@@ -50,6 +50,7 @@
         if (!user) {
             window.netlifyIdentity.on("login", () => {
                 console.log('just got a new login');
+                var user = window.netlifyIdentity.currentUser();
                 console.log('user', user);
                 console.log('user expire',user.token.expires_at);
                 // document.cookie = "nf_jwt =" + user.jwt() + ";expires" + user.token.expires_at + ";path=/";
