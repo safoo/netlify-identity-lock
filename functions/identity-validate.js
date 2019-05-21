@@ -14,13 +14,13 @@ exports.handler = function(event, context, callback) {
 		statusCode = 200
 		res = JSON.stringify({
 			app_metadata: {
-				roles: [`admin`],
+				roles: [`loggedinuser`],
 			},
 		})
-	}
-	else{
+	} else {
 		console.log(`Blocking`)
-	}
+    }
+    
 	callback(null, {
 		statusCode,
 		body: res,
