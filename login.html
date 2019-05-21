@@ -34,9 +34,10 @@
         if (d > exp){
             console.log("Your identity session has expired")
             netlifyIdentity.logout();
+            console.log('jwt-after logout', user.jwt());
         } else {
             console.log("the token hasn't expired, yet")
-            // updateLoginText()
+            // redirect()
         }
     }
     if (window.netlifyIdentity) {
@@ -49,7 +50,7 @@
         window.netlifyIdentity.on("init", user => {
         if (!user) {
             window.netlifyIdentity.on("login", () => {
-                // updateLoginText()
+                // redirect()
             });
         }
     });   
