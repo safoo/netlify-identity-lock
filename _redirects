@@ -1,3 +1,2 @@
-/login /login.html 200
-/index.html			200	Role=loggedinuser
-/index.html	/login.html	401
+/* 200! Role=loggedinuser
+/* /login.html 401!
