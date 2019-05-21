@@ -3,7 +3,8 @@ exports.handler = function(event, context, callback) {
     const { user } = JSON.parse(event.body)
     const { email } = user
     
-    console.log('user',user);
+    console.log('event.body',event.body);
+    console.log('context',context);
 
 	console.log(`${email} signing up`)
 	const domain = email.split(`@`)[1]
