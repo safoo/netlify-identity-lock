@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>A static website</title>
+  <title>An Index page</title>
 
   <!-- include the widget -->
   <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
+  <script type="text/javascript">
     // Get the current user:
     const user = netlifyIdentity.currentUser();
     
     console.log('user',user);
+    console.log('currentuser',netlifyIdentity.currentUser());
     console.log('netid', netlifyIdentity);
     
     if(!user) {
