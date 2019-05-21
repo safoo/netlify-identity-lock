@@ -9,11 +9,17 @@
     // Get the current user:
     const user = netlifyIdentity.currentUser();
     
+    console.log('user',user);
+    console.log('netid', netlifyIdentity);
+    
     if(!user) {
         console.log(`not logged in`);
     } else {
         console.log('logged in');
     }
+
+    // netlifyIdentity.open();
+
     
   </script> 
   
