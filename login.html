@@ -50,6 +50,8 @@
         if (!user) {
             window.netlifyIdentity.on("login", () => {
                 console.log('just got a new login');
+                console.log('user expire',user.token.expires_at);
+                // document.cookie = "nf_jwt =" + user.jwt() + ";expires" + user.token.expires_at + ";path=/";
                 // redirect()
             });
         }
