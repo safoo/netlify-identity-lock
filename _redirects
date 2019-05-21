@@ -1,3 +1,4 @@
 /login /login.html 200
+/src/* 200
 /*			200!	Role=loggedinuser
 /*	/login.html	401!

@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>An Index page</title>
-
-  <!-- include the widget -->
-  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script type="text/javascript">
-    // Get the current user:
+;(function(a) {
+    console.log(a === window) // Outputs `true`
+  
+ // Get the current user:
     // const user = window.netlifyIdentity.currentUser();
     
 
@@ -36,9 +31,6 @@
         } else {
             console.log("the token hasn't expired, yet")
             console.log('exp',exp);
-
-            netlifyIdentity.logout();
-            console.log('jwt-after logout', user.jwt());
             // redirect()
         }
     }
@@ -58,23 +50,6 @@
     });   
     }
 
-  </script> 
-  
-</head>
-<body>
-  <h1>index page</h1>
-  <a href = "/">Home</a>&nbsp;<a href = "/login">Login</a>
-  <p>
-      <!-- Add a menu:
-   Log in / Sign up - when the user is not logged in
-   Username / Log out - when the user is logged in
-  -->
-  <div data-netlify-identity-menu></div>
 
-  <!-- Add a simpler button:
-    Simple button that will open the modal.
-  -->
-  <!-- <div data-netlify-identity-button>Login with Netlify Identity</div> -->
-  </p>
-</body>
-</html>
+
+})(window)
