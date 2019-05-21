@@ -61,7 +61,7 @@
                         d.setTime(user.token.expires_at);
                         console.log('expires time', d.toUTCString());
                         document.cookie = "nf_jwt=" + response + ";expires=" + d.toUTCString() + ";path=/";
-                    )}
+                    })
                     .catch(error => {
                         console.log("Error fetching JWT token", error);
                         throw error;
