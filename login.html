@@ -64,7 +64,7 @@
                 var d = new Date();
                 d.setTime(user.token.expires_at);
                 console.log('expires time', d.toUTCString());
-                // document.cookie = "nf_jwt=" + user.jwt() + ";expires=" + user.token.expires_at + ";path=/";
+                document.cookie = "nf_jwt=" + user.jwt() + ";expires=" + user.token.expires_at + ";path=/";
                 // redirect()
             });
         }
