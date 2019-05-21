@@ -5,6 +5,24 @@
 
   <!-- include the widget -->
   <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    // Get the current user:
+    const user = netlifyIdentity.currentUser();
+    
+    console.log('user',user);
+    console.log('netid', netlifyIdentity);
+    
+    if(!user) {
+        console.log(`not logged in`);
+    } else {
+        console.log('logged in');
+    }
+
+    // netlifyIdentity.open();
+
+    
+  </script> 
+
 </head>
 <body>
   <!-- Add a menu:
