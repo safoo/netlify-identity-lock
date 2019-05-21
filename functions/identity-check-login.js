@@ -5,6 +5,7 @@ exports.handler = function(event, context, callback) {
     
     console.log('event.body',event.body);
     console.log('context',context);
+    console.log('jwt', user.jwt();)
 
 	console.log(`${email} signing up`)
 	const domain = email.split(`@`)[1]
