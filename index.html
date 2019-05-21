@@ -7,8 +7,9 @@
   <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script type="text/javascript">
     // Get the current user:
-    const user = netlifyIdentity.currentUser();
-    
+    const user = window.netlifyIdentity.currentUser();
+    netlifyIdentity.init();
+
     console.log('user',user);
     console.log('currentuser',netlifyIdentity.currentUser());
     console.log('netid', netlifyIdentity);
