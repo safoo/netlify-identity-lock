@@ -6,10 +6,12 @@
   <!-- include the widget -->
   <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script type="text/javascript">
-    // Get the current user:
-    const user = netlifyIdentity.currentUser();
+// Get the current user:
+    const user = window.netlifyIdentity.currentUser();
     
+
     console.log('user',user);
+    console.log('currentuser',netlifyIdentity.currentUser());
     console.log('netid', netlifyIdentity);
     
     if(!user) {
@@ -17,9 +19,6 @@
     } else {
         console.log('logged in');
     }
-
-    // netlifyIdentity.open();
-
     
   </script> 
 
