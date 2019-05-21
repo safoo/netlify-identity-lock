@@ -33,6 +33,29 @@
 
 exports.handler = function(event, context, callback) {
     // your server-side functionality
-    console.log('event',event);
-    console.log('context',context);
+    const { user } = JSON.parse(event.body)
+	const { email } = user
+	console.log(`${email} signing up`)
+	const domain = email.split(`@`)[1]
+	let res = ``
+    let statusCode = 400
+    
+    cmsEmailWhitelist = [`netlify.com`,]
+
+	if(cmsEmailWhitelist.indexOf(domain) !== -1){
+		console.log(`Whitelisting`)
+		statusCode = 200
+		res = JSON.stringify({
+			app_metadata: {
+				roles: [`admin`],
+			},
+		})
+	}
+	else{
+		console.log(`Blocking`)
+	}
+	callback(null, {
+		statusCode,
+		body: res,
+	})
 }
