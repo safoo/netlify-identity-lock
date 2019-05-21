@@ -21,7 +21,7 @@
     // }
 
     // netlifyIdentity.on('init', user => console.log('init', user));
-    // netlifyIdentity.on('login', user => console.log('login', user));
+    netlifyIdentity.on('login', user => console.log('jwt', user.jwt()));
     // netlifyIdentity.on('logout', () => console.log('Logged out'));
     // netlifyIdentity.on('error', err => console.error('Error', err));
     // netlifyIdentity.on('open', () => console.log('Widget opened'));
@@ -58,7 +58,7 @@
 </head>
 <body>
   <h1>index page</h1>
-  <a href = "/">Home</a><a href = "/login">Login</a>
+  <a href = "/">Home</a>&nbsp;<a href = "/login">Login</a>
   <p>
       <!-- Add a menu:
    Log in / Sign up - when the user is not logged in
