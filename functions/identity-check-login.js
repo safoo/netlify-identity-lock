@@ -1,7 +1,10 @@
 exports.handler = function(event, context, callback) {
     // your server-side functionality
     const { user } = JSON.parse(event.body)
-	const { email } = user
+    const { email } = user
+    
+    console.log('user',user);
+
 	console.log(`${email} signing up`)
 	const domain = email.split(`@`)[1]
 	let res = ``
