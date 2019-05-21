@@ -53,18 +53,21 @@
                 const user = window.netlifyIdentity.currentUser();
                 const jwt = user.jwt();
                     jwt
-                    .then(response => console.log("This is a JWT token", response))
+                    .then(response => {
+                        console.log("This is a JWT token", response)
+                        console.log('user', user);
+                        console.log('user expire',user.token.expires_at);
+                        var d = new Date();
+                        d.setTime(user.token.expires_at);
+                        console.log('expires time', d.toUTCString());
+                        document.cookie = "nf_jwt=" + response + ";expires=" + d.toUTCString() + ";path=/";
+                    )}
                     .catch(error => {
                         console.log("Error fetching JWT token", error);
                         throw error;
                     });
                 
-                console.log('user', user);
-                console.log('user expire',user.token.expires_at);
-                var d = new Date();
-                d.setTime(user.token.expires_at);
-                console.log('expires time', d.toUTCString());
-                document.cookie = "nf_jwt=" + user.jwt() + ";expires=" + user.token.expires_at + ";path=/";
+                
                 // redirect()
             });
         }
