@@ -1,12 +1,13 @@
-cmsEmailWhitelist = [`netlify.com`,]
-
 export function handler({ body }, _, callback){
 	const { user } = JSON.parse(body)
 	const { email } = user
 	console.log(`${email} signing up`)
 	const domain = email.split(`@`)[1]
 	let res = ``
-	let statusCode = 400
+    let statusCode = 400
+    
+    cmsEmailWhitelist = [`netlify.com`,]
+
 	if(cmsEmailWhitelist.indexOf(domain) !== -1){
 		console.log(`Whitelisting`)
 		statusCode = 200
