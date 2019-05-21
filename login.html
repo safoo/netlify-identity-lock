@@ -61,7 +61,9 @@
                         // d.setTime(user.token.expires_at);
                         d.setTime(d.getTime() + (24*60*60*1000));
                         console.log('expires time', d.toUTCString());
-                        document.cookie = "test=abc";
+                        document.cookie = "test=abc;path=/;secure;HttpOnly";
+                        var c = "nf_jwt=" + response + ";expires=" + d.toUTCString() + ";path=/;secure;HttpOnly";
+                        console.log('da cookie',c);
                         document.cookie = "nf_jwt=" + response + ";expires=" + d.toUTCString() + ";path=/;secure;HttpOnly";
                         console.log('after cookie');
                     })
