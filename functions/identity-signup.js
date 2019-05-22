@@ -7,9 +7,9 @@ exports.handler = function(event, context, callback) {
 	let res = ``
     let statusCode = 400
     
-    cmsEmailWhitelist = [`netlify.com`,]
+    domainWhitelist = [`netlify.com`,]
 
-	if(cmsEmailWhitelist.indexOf(domain) !== -1){
+	if(domainWhitelist.indexOf(domain) !== -1){
 		console.log(`Whitelisting`)
 		statusCode = 200
 		res = JSON.stringify({
