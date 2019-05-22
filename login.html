@@ -35,7 +35,7 @@
                         // console.log("This is a JWT token", response)
                         var d = new Date();
                         d.setTime(d.getTime() + (24*60*60*1000));
-                        // document.cookie = "nf_jwt=" + response + "; expires=" + d.toUTCString() + "; path=/";
+                        document.cookie = "nf_jwt=" + response + "; expires=" + d.toUTCString() + "; path=/";
                     })
                     .catch(error => {
                         console.log("Error fetching JWT token", error);
