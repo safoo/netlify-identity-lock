@@ -6,79 +6,46 @@
   <!-- include the widget -->
   <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script type="text/javascript">
-  // Get the current user:
-    // const user = window.netlifyIdentity.currentUser();
-    
-
-    // console.log('user',user);
-    // console.log('currentuser',netlifyIdentity.currentUser());
-    // console.log('netid', netlifyIdentity);
-    
-    // if(!user) {
-    //     console.log(`not logged in`);
-    // } else {
-    //     console.log('logged in');
-    // }
-
-    // netlifyIdentity.on('init', user => console.log('init', user));
-    netlifyIdentity.on('login', user => console.log('jwt', user.jwt()));
-    // netlifyIdentity.on('logout', () => console.log('Logged out'));
-    // netlifyIdentity.on('error', err => console.error('Error', err));
-    // netlifyIdentity.on('open', () => console.log('Widget opened'));
-    // netlifyIdentity.on('close', () => console.log('Widget closed'));
-    
+      
     const compareDate = (exp) => {
         const d = Date.now()
         if (d > exp){
-            console.log("Your identity session has expired")
+            // console.log("Your identity session has expired")
             netlifyIdentity.logout();
-            // console.log('jwt-after logout', user.jwt());
         } else {
-            console.log("the token hasn't expired, yet")
-            console.log('exp',exp);
+            // console.log("the token hasn't expired, yet")
             // redirect()
         }
     }
     if (window.netlifyIdentity) {
         // Check if the JWT token is expired, if so log out the user          
         netlifyIdentity.on("login", user => {
-            console.log(user)
+            // console.log(user)
             compareDate(user.token.expires_at)
         });
         // Redirect to the main page after a successful login
         window.netlifyIdentity.on("init", user => {
         if (!user) {
             window.netlifyIdentity.on("login", () => {
-                console.log('just got a new login');
+                // console.log('just got a new login');
                 const user = window.netlifyIdentity.currentUser();
                 const jwt = user.jwt();
                     jwt
                     .then(response => {
-                        console.log("This is a JWT token", response)
-                        console.log('user', user);
-                        // console.log('user expire',user.token.expires_at);
+                        // console.log("This is a JWT token", response)
                         var d = new Date();
-                        // d.setTime(user.token.expires_at);
                         d.setTime(d.getTime() + (24*60*60*1000));
-                        console.log('expires time', d.toUTCString());
-                        // document.cookie = "test=abc;path=/;secure;HttpOnly";
-                        // var c = "nf_jwt=" + response + "; expires=" + d.toUTCString() + "; path=/";
-                        // console.log('da cookie',c);
                         document.cookie = "nf_jwt=" + response + "; expires=" + d.toUTCString() + "; path=/";
-                        console.log('after cookie');
                     })
                     .catch(error => {
                         console.log("Error fetching JWT token", error);
                         throw error;
                     });
-                
-                
                 // redirect()
             });
         }
     });   
     }
-
   
   </script>
 </head>
