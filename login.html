@@ -11,7 +11,7 @@
         const d = Date.now()
         if (d > exp){
             console.log("Your identity session has expired")
-            netlifyIdentity.logout();
+            // netlifyIdentity.logout();
         } else {
             console.log("the token hasn't expired, yet")
             // redirect()
