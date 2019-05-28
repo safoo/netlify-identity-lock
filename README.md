@@ -1,9 +1,9 @@
 # netlify-identity-lock
-Use Netlify to create a private website in 10 minutes. [Demo](https://gracious-mayer-6485f9.netlify.com/)
+Use Netlify to create a private website for your organization in 10 minutes. [Demo](https://gracious-mayer-6485f9.netlify.com/). For getting setup with a business account send me an email https://github.com/safoo
 
 __Services Used__
 1. Netlify
-1. Netlify Identity Widget - Handles user authentication, invites, email confirmations, password resets etc.
+1. [Netlify Identity Widget](https://github.com/netlify/netlify-identity-widget) - Handles user authentication, invites, email confirmations, password resets etc.
 1. Netlify Role Based Redirects
 
 ## Code Changes
