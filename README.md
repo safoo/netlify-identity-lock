@@ -22,10 +22,10 @@ In your Netlify admin UI navigate to your site page, select the _Identity_ tab, 
 1. __Adding external provider:__ If using an external provider (e.g. Google), then set under Site->Settings->-Identity-> Registration->External providers. You can also add your organization's Google key in this modal.
 1. __Configure email setting:__ Optionally configure email settings under Site->Settings->Identity->Emails
 
-<img src="https://user-images.githubusercontent.com/1414129/58498790-a6026200-8133-11e9-9e24-fd8c888d011a.png" width="50%">
+<img src="https://user-images.githubusercontent.com/1414129/58498790-a6026200-8133-11e9-9e24-fd8c888d011a.png" width="50%" align="middle" alt="Registration settings">
 
 #### Configure the Function
 1. __Set Functions folder:__ Specify the functions folder under Site->Settings->Functions->Settings
 1. __Add the function webhook:__ Under Site->Settings->Identity->Notifications->Webhook, add the function URL and toggle ON _validate_, _signup_, _login_. Obtain your function URL from Site->Functions->identity-check-domain.js->Endpoint
 
-<img src="https://user-images.githubusercontent.com/1414129/58498848-c6cab780-8133-11e9-8261-06dca518315d.png" width="50%">
+<img src="https://user-images.githubusercontent.com/1414129/58498848-c6cab780-8133-11e9-8261-06dca518315d.png" width="50%" align="middle" alt="Function configuration">
