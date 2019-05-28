@@ -5,7 +5,7 @@ exports.handler = function(event, context, callback) {
      */
 
     // your server-side functionality
-    console.log('even',event);
+    console.log('even',event); 
     console.log('body', event.body);
     console.log('context', context);
     const { user } = JSON.parse(event.body)
