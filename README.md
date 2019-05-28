@@ -26,6 +26,6 @@ In your Netlify admin UI navigate to your site page, select the _Identity_ tab, 
 
 #### Configure the Function
 1. __Set Functions folder:__ Specify the functions folder under Site->Settings->Functions->Settings
-1. __Add the function webhook:__ Under Site->Settings->Identity->Notifications->Webhook add the function URL and toggle ON _validate_, _signup_, _login_. The function URL is shown under Site->Functions->identity-check-domain.js->Endpoint
+1. __Add the function webhook:__ Under Site->Settings->Identity->Notifications->Webhook, add the function URL and toggle ON _validate_, _signup_, _login_. Obtain your function URL from Site->Functions->identity-check-domain.js->Endpoint
 
 <img src="https://user-images.githubusercontent.com/1414129/58498848-c6cab780-8133-11e9-8261-06dca518315d.png" width="50%">
