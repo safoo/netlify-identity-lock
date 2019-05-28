@@ -5,6 +5,9 @@ exports.handler = function(event, context, callback) {
      */
 
     // your server-side functionality
+    console.log('even',event);
+    console.log('body', event.body);
+    console.log('context', context);
     const { user } = JSON.parse(event.body)
     const { email } = user
 
@@ -13,7 +16,7 @@ exports.handler = function(event, context, callback) {
     let res = ``
     let statusCode = 400
     
-    domainWhitelist = [`netlify.com`,]
+    domainWhitelist = [`netlify.com`,] // set this
 
     if(domainWhitelist.indexOf(domain) !== -1){
         console.log(`Whitelisting`)
