@@ -20,7 +20,7 @@ In your Netlify admin UI navigate to your site page, select the _Identity_ tab, 
 #### Registration Settings
 1. __Open, or invite only:__ Set under Site->Settings->Identity->Registration->Registration preferences 
 1. __Adding external provider:__ If using an external provider (e.g. Google), then set under Site->Settings->-Identity-> Registration->External providers. You can also add your organization's Google key in this modal.
-1. __Configure email setting:__ Optionally configure email settings under Site->Settings->Identity->Emails
+1. __Configure email setting:__ Configure email settings under Site->Settings->Identity->Emails
 
 <img src="https://user-images.githubusercontent.com/1414129/58498790-a6026200-8133-11e9-9e24-fd8c888d011a.png" width="50%" align="middle" alt="Registration settings">
 
