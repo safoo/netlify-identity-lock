@@ -9,7 +9,7 @@ __Services Used__
 ## Code Changes
 1. __Add a login page.__ Use [Login.html](https://github.com/safoo/netlify-identity-lock/blob/master/login.html) or add the necessary JavaScript from the file. This page will be accessed by all visitors - logged in and not-logged-in.
 
-1. __Add a function to check the user's domain.__ Copy [identity-check-domain.js](https://github.com/safoo/netlify-identity-lock/blob/master/functions/identity-check-domain.js) to your functions folder in Netlify. Change the domain entries to your company's domain. This function authorizes a user based on their email domain.
+1. __Add a function to check the user's domain.__ Copy [identity-check-domain.js](https://github.com/safoo/netlify-identity-lock/blob/master/functions/identity-check-domain.js) to your Netlify functions folder in your repo. Change the domain entries to your company's domain. This function authorizes a user based on their email domain.
 
 1. __Add role-based redirect rules.__ Add the [\_redirects](https://github.com/safoo/netlify-identity-lock/blob/master/_redirects) file to allow authorized users access to your content. Make necessary edits to the rules if you have folders or subdomains. Note the user's role is assigned by the function.
 
